@@ -1,0 +1,14 @@
+# Ne publier que le site : index.html, css/, js/, assets/
+Captures/
+*.pdf
+*.docx
+.env
+.env.*
+.gitignore
+.vercelignore
+*.md
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

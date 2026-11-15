@@ -1,0 +1,24 @@
+# --- Fichiers privés : ne jamais versionner ---
+# Photos d'origine, captures en pleine taille et CV
+Captures/
+*.pdf
+*.docx
+
+# --- Secrets et configuration locale ---
+.env
+.env.*
+.vercel/
+
+# --- Dépendances et builds ---
+node_modules/
+dist/
+build/
+
+# --- Fichiers système et éditeurs ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.log
+*.tmp

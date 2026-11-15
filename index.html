@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Salah Eddine KADDOUR · Développeur Full-Stack</title>
+  <meta name="description" content="Salah Eddine KADDOUR, développeur full-stack et ingénieur en systèmes d'information et données à Oran. SaaS, machine learning, e-commerce et applications mobiles. Créateur de Flowmerce, vainqueur de la 2e édition de ProtoMarket.">
+  <meta name="theme-color" content="#F3F5F4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0F1720" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Salah Eddine KADDOUR · Développeur Full-Stack">
+  <meta property="og:description" content="Créateur de Flowmerce, vainqueur de la 2e édition de ProtoMarket. SaaS, machine learning, e-commerce et applications mobiles conçus à Oran.">
+  <meta property="og:image" content="assets/img/profile.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Apply saved theme before paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('sk-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Noto+Kufi+Arabic:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Salah Eddine KADDOUR">
+        <span class="brand-mark" aria-hidden="true">SK</span>
+        <span class="brand-name" data-i18n="name.short">Salah Kadd</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navigation principale" data-i18n-attr="aria-label:nav.label">
+        <ul>
+          <li><a href="#ecosystem" data-i18n="nav.ecosystem">Écosystème</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Projets</a></li>
+          <li><a href="#expertise" data-i18n="nav.expertise">Expertise</a></li>
+          <li><a href="#journey" data-i18n="nav.journey">Parcours</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <div class="lang-switch" role="group" aria-label="Langue" data-i18n-attr="aria-label:lang.label">
+          <button type="button" data-lang="fr" lang="fr">FR</button>
+          <button type="button" data-lang="en" lang="en">EN</button>
+          <button type="button" data-lang="ar" lang="ar">ع</button>
+        </div>
+        <button type="button" class="icon-btn theme-toggle" id="theme-toggle" aria-label="Changer de thème" data-i18n-attr="aria-label:theme.toggle">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 0 1 9.4 4a8.2 8.2 0 1 0 10.6 10.6Z"/></svg>
+        </button>
+        <button type="button" class="icon-btn menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Menu" data-i18n-attr="aria-label:nav.menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="availability"><span class="pulse" aria-hidden="true"></span><span data-i18n="hero.available">Disponible pour de nouveaux projets, en télétravail ou à Oran</span></p>
+          <h1 class="hero-name">
+            <span data-i18n="name.first">Salah Eddine</span>
+            <span data-i18n="name.last">KADDOUR</span>
+          </h1>
+          <p class="hero-role" data-i18n="hero.role">Développeur Full-Stack, ingénieur en informatique, systèmes d'information et données</p>
+          <p class="hero-lead" data-i18n="hero.lead">Je conçois des logiciels pour le commerce algérien : des plateformes SaaS, des modèles de machine learning et des applications mobiles utilisées par des vendeurs, des grossistes et des livreurs.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects" data-i18n="hero.cta.projects">Voir mes projets</a>
+          </div>
+          <a class="award" href="#p-flowmerce">
+            <span class="award-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7M10 17h4"/></svg>
+            </span>
+            <span class="award-text">
+              <strong data-i18n="award.hero">Flowmerce a remporté la 2e édition de ProtoMarket</strong>
+              <small data-i18n="award.heroSub">Mon SaaS de gestion des retours e-commerce basé sur l'IA</small>
+            </span>
+          </a>
+          <dl class="hero-facts">
+            <div><dt data-i18n="facts.years.value">3+ ans</dt><dd data-i18n="facts.years.label">d'expérience en développement</dd></div>
+            <div><dt data-i18n="facts.apps.value">7</dt><dd data-i18n="facts.apps.label">applications conçues et livrées</dd></div>
+            <div><dt data-i18n="facts.langs.value">3</dt><dd data-i18n="facts.langs.label">langues : arabe, français, anglais</dd></div>
+          </dl>
+        </div>
+        <figure class="hero-portrait">
+          <picture>
+            <source srcset="assets/img/profile.webp" type="image/webp">
+            <img src="assets/img/profile.jpg" width="600" height="750" alt="Portrait de Salah Eddine KADDOUR" data-i18n-attr="alt:hero.portraitAlt">
+          </picture>
+          <figcaption>
+            <span data-i18n="hero.location">Oran, Algérie</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ECOSYSTEM -->
+    <section class="section ecosystem" id="ecosystem" aria-labelledby="eco-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="eco-title" data-i18n="eco.title">Un écosystème pour le commerce algérien</h2>
+          <p data-i18n="eco.intro">Mes applications couvrent toute la chaîne : vendre en ligne, traiter les retours, détecter la fraude, organiser la vente sur le terrain et livrer. Certaines sont déjà reliées entre elles.</p>
+        </header>
+
+        <div class="eco-board">
+          <div class="eco-lane eco-lane--flow">
+            <p class="eco-lane-title" data-i18n="eco.lane.online">Vente en ligne, retours et IA</p>
+            <ol class="eco-flow">
+              <li><a class="eco-node" href="#p-caba-store" style="--brand:#F26B1D"><span class="eco-dot" aria-hidden="true">C</span><span><strong>Caba-Store</strong><small data-i18n="eco.node.caba">Boutique en ligne</small></span></a></li>
+              <li class="eco-link" aria-hidden="true"><span class="eco-line"></span><span class="eco-label" data-i18n="eco.link.returns">retours via API</span></li>
+              <li><a class="eco-node" href="#p-flowmerce" style="--brand:#2F6BFF"><span class="eco-dot" aria-hidden="true">F</span><span><strong>Flowmerce</strong><small data-i18n="eco.node.flowmerce">Gestion des retours</small></span></a></li>
+              <li class="eco-link" aria-hidden="true"><span class="eco-line"></span><span class="eco-label" data-i18n="eco.link.score">score de risque</span></li>
+              <li><a class="eco-node" href="#p-flowmerce-ml" style="--brand:#0E7C86"><span class="eco-dot" aria-hidden="true">ML</span><span><strong>Flowmerce-ML</strong><small data-i18n="eco.node.ml">Modèle anti-fraude</small></span></a></li>
+            </ol>
+          </div>
+
+          <div class="eco-groups">
+            <div class="eco-lane">
+              <p class="eco-lane-title" data-i18n="eco.lane.field">Distribution et vente terrain</p>
+              <div class="eco-nodes">
+                <a class="eco-node" href="#p-grossiste-pro" style="--brand:#00704A"><span class="eco-dot" aria-hidden="true">G</span><span><strong>Grossiste Pro</strong><small data-i18n="eco.node.grossiste">Commandes et tournées</small></span></a>
+                <a class="eco-node" href="#p-sellwasl" style="--brand:#0A1F5C"><span class="eco-dot" aria-hidden="true">S</span><span><strong>SellWasl</strong><small data-i18n="eco.node.sellwasl">Force de vente</small></span></a>
+              </div>
+            </div>
+            <div class="eco-lane">
+              <p class="eco-lane-title" data-i18n="eco.lane.delivery">Livraison de proximité</p>
+              <div class="eco-nodes">
+                <a class="eco-node" href="#p-wassaly" style="--brand:#FF7A00"><span class="eco-dot" aria-hidden="true">W</span><span><strong>Wassaly</strong><small data-i18n="eco.node.wassaly">Clients et livreurs</small></span></a>
+              </div>
+            </div>
+            <div class="eco-lane">
+              <p class="eco-lane-title" data-i18n="eco.lane.research">Recherche et données</p>
+              <div class="eco-nodes">
+                <a class="eco-node" href="#p-microtrace" style="--brand:#127A7A"><span class="eco-dot" aria-hidden="true">M</span><span><strong>MicroTrace</strong><small data-i18n="eco.node.microtrace">Analyse scientifique</small></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section projects" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="projects-title" data-i18n="projects.title">Projets</h2>
+          <p data-i18n="projects.intro">Sept applications conçues, développées et déployées de bout en bout, de la base de données à l'interface.</p>
+        </header>
+
+        <div class="filters" role="group" aria-label="Filtrer les projets" data-i18n-attr="aria-label:filters.label">
+          <button type="button" class="chip" data-filter="all" aria-pressed="true" data-i18n="filters.all">Tous</button>
+          <button type="button" class="chip" data-filter="saas" aria-pressed="false">SaaS</button>
+          <button type="button" class="chip" data-filter="ml" aria-pressed="false" data-i18n="filters.ml">Machine Learning</button>
+          <button type="button" class="chip" data-filter="ecommerce" aria-pressed="false" data-i18n="filters.ecommerce">E-commerce</button>
+          <button type="button" class="chip" data-filter="mobile" aria-pressed="false" data-i18n="filters.mobile">Mobile</button>
+          <button type="button" class="chip" data-filter="data" aria-pressed="false" data-i18n="filters.data">Données</button>
+        </div>
+
+        <div class="project-list" id="project-list" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section class="section expertise" id="expertise" aria-labelledby="expertise-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="expertise-title" data-i18n="expertise.title">Ce que je fais</h2>
+          <p data-i18n="expertise.intro">Du besoin métier à la mise en production, avec la même attention au code, aux données et à l'expérience des utilisateurs.</p>
+        </header>
+        <div class="expertise-grid" id="expertise-grid"></div>
+
+        <div class="skills">
+          <h3 data-i18n="skills.title">Compétences techniques</h3>
+          <div class="skills-grid" id="skills-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNEY -->
+    <section class="section journey" id="journey" aria-labelledby="journey-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="journey-title" data-i18n="journey.title">Parcours</h2>
+          <p data-i18n="journey.intro">Une formation d'ingénieur en systèmes d'information, complétée par une expérience directe du commerce et de la vente terrain.</p>
+        </header>
+        <div class="journey-grid">
+          <div>
+            <h3 data-i18n="journey.work">Expérience</h3>
+            <ol class="timeline" id="timeline-work"></ol>
+          </div>
+          <div>
+            <h3 data-i18n="journey.education">Formation</h3>
+            <ol class="timeline" id="timeline-edu"></ol>
+            <h3 class="spoken-title" data-i18n="journey.languages">Langues</h3>
+            <ul class="spoken" id="spoken-langs"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-inner">
+        <div class="contact-intro">
+          <h2 id="contact-title" data-i18n="contact.title">Travaillons ensemble</h2>
+          <p data-i18n="contact.text">Un SaaS à lancer, un modèle de machine learning à intégrer ou une application à reprendre ? Écrivez-moi pour en parler.</p>
+        <ul class="contact-list">
+          <li>
+            <a href="mailto:Salah.kadd4@gmail.com">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 7 8.5-7"/></svg>
+              <span><small data-i18n="contact.email">E-mail</small>Salah.kadd4@gmail.com</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/213671860785" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-3.6A8 8 0 1 1 8 19z"/><path d="M9 9.5c.3 1.9 2.6 4.3 4.6 4.8l1.2-1.2 1.7.8c-.3 1.2-1.3 1.8-2.4 1.6-3-.6-5.6-3.2-6.2-6.2-.2-1.1.4-2.1 1.6-2.4l.8 1.7z"/></svg>
+              <span><small>WhatsApp</small><bdi dir="ltr">+213 671 86 07 85</bdi></span>
+            </a>
+          </li>
+          <li>
+            <a href="tel:+213671860785">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5 9 3l1.7 4-2 1.4a11 11 0 0 0 6.9 6.9l1.4-2 4 1.7-.5 2.4a2 2 0 0 1-2 1.6A15.5 15.5 0 0 1 5 5.5a2 2 0 0 1 1.6-2Z"/></svg>
+              <span><small data-i18n="contact.phone">Téléphone</small><bdi dir="ltr">+213 671 86 07 85</bdi></span>
+            </a>
+          </li>
+        </ul>
+        </div>
+
+        <!-- Messages are relayed to the e-mail in data-endpoint by FormSubmit (no account, no login for visitors). -->
+        <form class="contact-form" id="contact-form" novalidate
+              data-endpoint="https://formsubmit.co/ajax/Salah.kadd4@gmail.com">
+          <h3 data-i18n="form.title">Envoyer un message</h3>
+          <p class="form-note" data-i18n="form.note">Sans inscription ni connexion : votre message m'arrive directement par e-mail.</p>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="f-name" data-i18n="form.name">Nom</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" maxlength="100" required aria-describedby="f-name-err">
+              <p class="field-error" id="f-name-err"></p>
+            </div>
+            <div class="field">
+              <label for="f-email" data-i18n="form.email">E-mail</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" dir="ltr" maxlength="150" required aria-describedby="f-email-err">
+              <p class="field-error" id="f-email-err"></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-subject" data-i18n="form.subject">Sujet</label>
+            <select id="f-subject" name="subject">
+              <option value="saas" data-i18n="form.subject.saas">Projet SaaS ou application web</option>
+              <option value="ml" data-i18n="form.subject.ml">Machine learning ou données</option>
+              <option value="mobile" data-i18n="form.subject.mobile">Application mobile</option>
+              <option value="job" data-i18n="form.subject.job">Offre d'emploi ou de stage</option>
+              <option value="other" data-i18n="form.subject.other">Autre</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-message" data-i18n="form.message">Message</label>
+            <textarea id="f-message" name="message" rows="6" maxlength="4000" required aria-describedby="f-message-err"
+                      placeholder="Décrivez votre projet ou votre besoin." data-i18n-attr="placeholder:form.placeholder.message"></textarea>
+            <p class="field-error" id="f-message-err"></p>
+          </div>
+
+          <!-- Spam trap: hidden from people, filled by bots -->
+          <div class="hp" aria-hidden="true">
+            <label for="f-honey">Ne pas remplir</label>
+            <input id="f-honey" name="_honey" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit">
+            <svg class="dir-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            <span data-i18n="form.send">Envoyer le message</span>
+          </button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> <span data-i18n="name.full">Salah Eddine KADDOUR</span></p>
+      <p data-i18n="footer.made">Conçu et développé à Oran.</p>
+      <a href="#top" data-i18n="footer.top">Retour en haut</a>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Capture d'écran" data-i18n-attr="aria-label:lightbox.label">
+    <div class="lightbox-inner">
+      <img id="lightbox-img" src="" alt="">
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+      <div class="lightbox-controls">
+        <button type="button" class="icon-btn" id="lightbox-prev" aria-label="Image précédente" data-i18n-attr="aria-label:lightbox.prev">
+          <svg class="dir-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 6-6 6 6 6"/></svg>
+        </button>
+        <span id="lightbox-count"></span>
+        <button type="button" class="icon-btn" id="lightbox-next" aria-label="Image suivante" data-i18n-attr="aria-label:lightbox.next">
+          <svg class="dir-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg>
+        </button>
+        <button type="button" class="icon-btn" id="lightbox-close" aria-label="Fermer" data-i18n-attr="aria-label:lightbox.close">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/content.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
