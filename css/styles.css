@@ -260,18 +260,48 @@ button { font: inherit; color: inherit; }
   backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
 }
 
+/* Phones and small tablets: compact hero so a visitor arriving from the QR code
+   sees who, what, the award and how to get in touch on the first screen */
 @media (max-width: 860px) {
-  .hero-grid { grid-template-columns: 1fr; }
-  .hero-portrait { order: -1; justify-self: start; width: min(64%, 280px); }
-  .hero-portrait::before { inset: 12px -12px -12px 12px; }
-  :root[dir="rtl"] .hero-portrait::before { inset: 12px 12px -12px -12px; }
-  .hero-name { margin-top: 20px; }
+  .hero { padding-block: 24px 56px; }
+  .hero-grid {
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas:
+      "avail   avail"
+      "photo   name"
+      "role    role"
+      "award   award"
+      "actions actions"
+      "lead    lead"
+      "facts   facts";
+    column-gap: 18px; row-gap: 0; align-items: center;
+  }
+  .hero-text { display: contents; }
+  .availability { grid-area: avail; justify-self: start; margin-bottom: 22px; font-size: .86rem; }
+  .hero-portrait, :root[dir="rtl"] .hero-portrait { grid-area: photo; justify-self: start; width: clamp(84px, 24vw, 132px); }
+  .hero-portrait picture { aspect-ratio: 1; border-radius: 50%; box-shadow: none; }
+  .hero-portrait img { object-position: 50% 16%; }
+  .hero-portrait::before, :root[dir="rtl"] .hero-portrait::before { inset: -5px; border-radius: 50%; }
+  .hero-portrait figcaption { display: none; }
+  .hero-name { grid-area: name; margin-top: 0; font-size: clamp(2rem, 9.4vw, 3.4rem); }
+  :root[lang="ar"] .hero-name { font-size: clamp(1.9rem, 8.6vw, 3rem); }
+  .hero-role { grid-area: role; margin-top: 18px; max-width: none; font-size: 1.08rem; }
+  .award { grid-area: award; margin-top: 16px; max-width: none; }
+  .hero-actions { grid-area: actions; margin-top: 18px; }
+  .hero-lead { grid-area: lead; margin-top: 24px; font-size: 1rem; }
+  .hero-facts { grid-area: facts; margin-top: 26px; padding-top: 20px; }
 }
 @media (max-width: 520px) {
-  .hero-facts { grid-template-columns: 1fr; gap: 14px; }
-  .hero-facts div { display: flex; align-items: baseline; gap: 12px; }
-  .hero-facts dd { margin: 0; }
-  .hero-actions .btn { flex: 1 1 100%; }
+  .hero-actions { flex-wrap: nowrap; gap: 10px; }
+  .hero-actions .btn { flex: 1 1 0; padding-inline: .8em; }
+  .hero-facts { gap: 12px; }
+  .hero-facts dt { font-size: 1.35rem; }
+  .hero-facts dd { font-size: .8rem; }
+  .award { padding: 12px; gap: 12px; }
+  :root[dir="rtl"] .award { padding: 12px; }
+  .award-icon { width: 40px; height: 40px; }
+  .award-text strong { font-size: .98rem; }
+  .award-text small { font-size: .84rem; }
 }
 
 /* award: the one gold element on the page */
@@ -684,6 +714,64 @@ button { font: inherit; color: inherit; }
 .lightbox .icon-btn:hover { border-color: #fff; }
 #lightbox-count { min-width: 56px; text-align: center; font-variant-numeric: tabular-nums; }
 :root[dir="rtl"] .dir-icon { transform: scaleX(-1); }
+
+/* ---------- phone adaptations ---------- */
+.details-toggle, .mobile-bar { display: none; }
+
+/* Filters: one swipeable row instead of several wrapped lines */
+@media (max-width: 640px) {
+  .filters {
+    flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none;
+    margin-inline: calc(-1 * var(--gutter)); padding: 2px var(--gutter) 6px;
+    scroll-padding-inline: var(--gutter);
+  }
+  .filters::-webkit-scrollbar { display: none; }
+  .chip { flex: none; }
+}
+
+@media (max-width: 720px) {
+  /* Projects: summary first, features folded behind a toggle */
+  .project-list { gap: 72px; }
+  .details-toggle {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 18px;
+    min-height: 44px; padding: 0 16px; border-radius: 999px; cursor: pointer;
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+    font-weight: 600; font-size: .95rem;
+  }
+  .details-toggle svg { transition: transform .2s ease; }
+  .details-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+  .project-details { display: none; }
+  .project-details.is-open { display: block; }
+  .project-actions { margin-top: 18px; }
+  .project-actions .btn { width: 100%; }
+
+  /* Quick contact bar pinned to the bottom of the screen */
+  .mobile-bar {
+    position: fixed; z-index: 60;
+    inset-inline: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    display: grid; grid-template-columns: 1fr 1fr 1.25fr; gap: 6px; padding: 6px;
+    background: color-mix(in srgb, var(--surface) 94%, transparent);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow);
+    transition: transform .25s ease, opacity .25s ease;
+  }
+  .mobile-bar.is-hidden { transform: translateY(calc(100% + 28px)); opacity: 0; pointer-events: none; }
+  .mobile-bar a {
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+    min-height: 54px; border-radius: 13px; text-decoration: none;
+    color: var(--ink); font-size: .8rem; font-weight: 600;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mobile-bar a:active { background: var(--bg-alt); }
+  .mobile-bar a.is-primary { background: var(--ink); color: var(--bg); }
+  .mobile-bar a.is-primary:active { background: var(--accent-strong); }
+  .mobile-bar svg { width: 22px; height: 22px; }
+  .site-footer { padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
+
+  /* Comfortable tap targets */
+  .lang-switch button { height: 38px; }
+  .main-nav a { min-height: 48px; display: flex; align-items: center; }
+}
 
 /* ---------- motion preferences ---------- */
 @media (prefers-reduced-motion: reduce) {

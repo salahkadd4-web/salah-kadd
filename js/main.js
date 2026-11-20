@@ -35,6 +35,7 @@
   }
   var ICONS = {
     external: '<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',
+    chevron: '<path d="m6 9 6 6 6-6"/>',
     trophy: '<path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7M10 17h4"/>',
     lock: '<rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/>',
     check: '<path d="m5 12.5 4.2 4.2L19 7"/>',
@@ -236,6 +237,24 @@
       ]);
     }
 
+    // Features + stack: always visible on large screens, folded behind a toggle on phones (see CSS)
+    var detailsId = "details-" + p.id;
+    var details = el("div", { class: "project-details", id: detailsId }, [
+      el("h4", { class: "mini-title", text: t("projects.features") }),
+      feats,
+      el("h4", { class: "mini-title", text: t("projects.stack") }),
+      stack
+    ]);
+    var detailsToggle = el("button", {
+      type: "button", class: "details-toggle", "aria-expanded": "false", "aria-controls": detailsId
+    }, [el("span", { text: t("projects.showDetails") }), svg(ICONS.chevron)]);
+    detailsToggle.addEventListener("click", function () {
+      var open = detailsToggle.getAttribute("aria-expanded") !== "true";
+      detailsToggle.setAttribute("aria-expanded", String(open));
+      details.classList.toggle("is-open", open);
+      detailsToggle.firstChild.textContent = t(open ? "projects.hideDetails" : "projects.showDetails");
+    });
+
     var body = el("div", { class: "project-body" }, [
       tags,
       title,
@@ -245,10 +264,8 @@
         el("strong", { text: t("award.project") })
       ]) : null,
       el("p", { class: "project-summary", text: c.summary }),
-      el("h4", { class: "mini-title", text: t("projects.features") }),
-      feats,
-      el("h4", { class: "mini-title", text: t("projects.stack") }),
-      stack,
+      detailsToggle,
+      details,
       el("div", { class: "project-actions" }, [action])
     ]);
 
@@ -371,6 +388,37 @@
     if (e.key === "ArrowRight") step(rtl ? -1 : 1);
     if (e.key === "ArrowLeft") step(rtl ? 1 : -1);
   });
+  // Touch: swipe left/right on the enlarged screenshot to change image
+  var touchX = null, touchY = null;
+  lb.addEventListener("touchstart", function (e) {
+    touchX = e.touches[0].clientX; touchY = e.touches[0].clientY;
+  }, { passive: true });
+  lb.addEventListener("touchend", function (e) {
+    if (touchX === null || !lbState.project || lbState.project.shots.length < 2) return;
+    var dx = e.changedTouches[0].clientX - touchX;
+    var dy = e.changedTouches[0].clientY - touchY;
+    touchX = null;
+    if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy)) return;
+    var forward = dx < 0;                       // finger moved left = next image (LTR)
+    if (root.dir === "rtl") forward = !forward;
+    step(forward ? 1 : -1);
+  }, { passive: true });
+
+  /* ---------- mobile contact bar ---------- */
+  var bar = document.getElementById("mobile-bar");
+  var contactSection = document.getElementById("contact");
+  if (bar && contactSection && "IntersectionObserver" in window) {
+    // Hide the bar once the contact section is on screen: it would duplicate it and cover the form
+    new IntersectionObserver(function (entries) {
+      bar.classList.toggle("is-hidden", entries[0].isIntersecting);
+    }, { rootMargin: "0px 0px -15% 0px" }).observe(contactSection);
+  }
+  if (bar) {
+    bar.querySelector('a[href="#contact-form"]').addEventListener("click", function () {
+      // Put the cursor in the first field once the scroll has started
+      setTimeout(function () { document.getElementById("f-name").focus({ preventScroll: true }); }, 400);
+    });
+  }
 
   /* ---------- mobile menu ---------- */
   var menuBtn = document.getElementById("menu-toggle");
